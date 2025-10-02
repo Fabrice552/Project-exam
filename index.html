@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+  <title>Stopwatch App</title>
+  <link rel="stylesheet" href="style.css" />
+  <!-- Google Fonts for Digital Style -->
+  <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
+</head>
+<body>
+  <main class="container">
+    <div class="stopwatch">
+      <div class="display-container">
+        <span id="hours" class="digit">00</span>:
+        <span id="minutes" class="digit">00</span>:
+        <span id="seconds" class="digit">00</span>
+        <span class="ms-wrap">
+          .<span id="milliseconds" class="digit-ms">00</span>
+        </span>
+      </div>
+      <div class="buttons">
+        <button id="resetLapBtn" class="btn reset">Reset</button>
+        <button id="startStopBtn" class="btn start">Start</button>
+      </div>
+      <div id="lapsContainer" class="laps-container">
+        <!-- Laps will appear here -->
+      </div>
+    </div>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>

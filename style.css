@@ -1,0 +1,148 @@
+body {
+  background: #101010;
+  color: #FFA726;
+  min-height: 100vh;
+  margin: 0;
+  font-family: 'Share Tech Mono', 'Courier New', Courier, monospace;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  width: 100vw;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.stopwatch {
+  background: transparent;
+  border-radius: 12px;
+  box-shadow: none;
+  padding: 32px 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.display-container {
+  font-family: 'Share Tech Mono', 'Courier New', Courier, monospace;
+  font-size: 5vw;
+  min-width: 420px;
+  letter-spacing: 4px;
+  text-align: center;
+  margin-bottom: 32px;
+  color: #FFA726;
+  text-shadow: 0 0 12px #ff9800b0;
+}
+.digit, .digit-ms {
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0;
+}
+.ms-wrap {
+  font-size: 0.6em;
+   vertical-align: baseline; 
+  display: inline-block;
+  margin-left: 0.2em; 
+}
+
+.buttons {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 32px;
+}
+
+.btn {
+  padding: 12px 36px;
+  font-family: inherit;
+  font-size: 1.2rem;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+  box-shadow: 0 2px 6px #0007;
+}
+
+.btn.start {
+  background: #388e3c;
+  color: #fff;
+}
+.btn.start:hover, .btn.start:focus {
+  background: #43a047;
+}
+
+.btn.stop {
+  background: #b71c1c;
+  color: #fff;
+}
+.btn.stop:hover, .btn.stop:focus {
+  background: #e53935;
+}
+
+.btn.reset {
+  background: #795548;
+  color: #fff;
+}
+.btn.reset:hover, .btn.reset:focus {
+  background: #a48260;
+}
+
+.btn.lap {
+  background: #FFA726;
+  color: #101010;
+}
+.btn.lap:hover, .btn.lap:focus {
+  background: #ffd180;
+  color: #333;
+}
+
+.laps-container {
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto;
+  color: #FFA726;
+  font-size: 1.1rem;
+  font-family: inherit;
+}
+
+.laps-table {
+  width: auto;
+  border-collapse: collapse;
+  margin-top: 16px;
+  font-family: 'Share Tech Mono', 'Courier New', Courier, monospace;
+  color: #FFA726;
+  font-size: 1.1rem;
+  letter-spacing: 2px;
+}
+.laps-table th,
+.laps-table td {
+  padding: 4px 16px 4px 4px;
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+.laps-table th {
+  color: #ffd180;
+  font-size: 1em;
+  font-weight: normal;
+  text-align: right;
+}
+.laps-table td {
+  font-size: 0.99em;
+  font-family: inherit;
+}
+@media (max-width: 600px) {
+  .display-container {
+    font-size: 2.1rem;
+    min-width: 170px;
+  }
+  .container {
+    padding: 6px;
+  }
+  .laps-container, .laps-table {
+    font-size: 0.95rem;
+    max-width: 98vw;
+  }
+}
