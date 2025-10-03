@@ -156,3 +156,33 @@ resetLapBtn.addEventListener('click', () => {
 // Initialize
 updateDisplay(0);
 renderLaps();
+// Font size controls
+let fontSizeVW = 12; // Default
+const displayContainer = document.querySelector('.display-container');
+function updateFontSize() {
+  displayContainer.style.fontSize = fontSizeVW + 'vw';
+}
+document.getElementById('increaseFontBtn').onclick = function() {
+  fontSizeVW = Math.min(fontSizeVW + 1, 18);
+  updateFontSize();
+};
+document.getElementById('decreaseFontBtn').onclick = function() {
+  fontSizeVW = Math.max(fontSizeVW - 1, 6);
+  updateFontSize();
+};
+updateFontSize();
+
+// Fullscreen control
+document.getElementById('fullscreenBtn').onclick = function() {
+  if (!document.fullscreenElement) {
+    document.documentElement.requestFullscreen();
+  } else {
+    document.exitFullscreen();
+  }
+};
+
+// Share control (copy current page URL)
+document.getElementById('shareBtn').onclick = function() {
+  navigator.clipboard.writeText(window.location.href);
+  alert('URL copied to clipboard!');
+};
