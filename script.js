@@ -189,3 +189,96 @@ document.getElementById('shareBtn').onclick = function() {
 document.getElementById('themeToggleBtn').addEventListener('click', () => {
   document.body.classList.toggle('light-theme');
 });
+
+function beep() {
+  try {
+    const ctx = new (window.AudioContext || window.webkitAudioContext)();
+    const oscillator = ctx.createOscillator();
+    const gain = ctx.createGain();
+
+    oscillator.type = 'sine';
+    oscillator.frequency.value = 900;
+    oscillator.connect(gain);
+    gain.connect(ctx.destination);
+    gain.gain.value = 0.15;
+
+    oscillator.start();
+    setTimeout(() => {
+      oscillator.stop();
+      ctx.close();
+    }, 120);
+  } catch (e) {
+    // Ignore beep errors so stopwatch still works
+  }
+}
+function beep() {
+  try {
+    const ctx = new (window.AudioContext || window.webkitAudioContext)();
+    const oscillator = ctx.createOscillator();
+    const gain = ctx.createGain();
+
+    oscillator.type = 'sine';
+    oscillator.frequency.value = 900;
+    oscillator.connect(gain);
+    gain.connect(ctx.destination);
+    gain.gain.value = 0.15;
+
+    oscillator.start();
+    setTimeout(() => {
+      oscillator.stop();
+      ctx.close();
+    }, 120);
+  } catch (e) {
+    
+  }
+}
+ 
+function startTimer() {
+  if (running) return;
+  running = true;
+  let prev = Date.now() - elapsedMs;
+  timer = setInterval(() => {
+    elapsedMs = Date.now() - prev;
+    updateDisplay(elapsedMs);
+  }, 10);
+
+  // Change button appearance
+  startStopBtn.textContent = "Stop";
+  startStopBtn.classList.remove('start');
+  startStopBtn.classList.add('stop');
+  resetLapBtn.textContent = "Lap";
+  resetLapBtn.classList.remove('reset');
+  resetLapBtn.classList.add('lap');
+  beep(); // <<< Call beep here, after everything else
+}
+function stopTimer() {
+  if (!running) return;
+  running = false;
+  clearInterval(timer);
+  startStopBtn.textContent = "Start";
+  startStopBtn.classList.remove('stop');
+  startStopBtn.classList.add('start');
+  resetLapBtn.textContent = "Reset";
+  resetLapBtn.classList.remove('lap');
+  resetLapBtn.classList.add('reset');
+  beep(); // <--- Beep for Stop
+}
+function resetTimer() {
+  elapsedMs = 0;
+  lastLapMs = 0;
+  laps = [];
+  updateDisplay(0);
+  renderLaps();
+  beep(); // <--- Beep for Reset
+}
+function addLap() {
+  beep(); // <--- Beep for Lap
+  const lapTime = elapsedMs - (laps.length ? laps[laps.length-1].totalTime : 0);
+  const lapObj = {
+    num: laps.length + 1,
+    lapTime: lapTime,
+    totalTime: elapsedMs
+  };
+  laps.unshift(lapObj); // newest lap at top
+  renderLaps();
+}
