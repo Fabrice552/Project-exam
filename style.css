@@ -5,7 +5,7 @@
   font-style: normal;
 }
 
-body {
+body { 
   background: #000000;
   color: #FFA726;
   min-height: 100vh;
@@ -78,7 +78,7 @@ body {
   border-radius: 4px;
   cursor: pointer;
   transition: background 0.2s, color 0.2s, box-shadow 0.2s;
-  box-shadow: 0 2px 8px #0007;
+  box-shadow: 0 2px 8px #000000;
   font-weight: bold;
   letter-spacing: 2px;
 }
@@ -110,7 +110,7 @@ body {
 
 .btn.lap {
   background: #FFA726;
-  color: #101010;
+  color: #000000;
 }
 .btn.lap:hover, .btn.lap:focus {
   background: #ffd180;
@@ -209,7 +209,7 @@ body {
 }
 
 .icon-btn:hover, .icon-btn:focus {
-  background: #222;
+  background: #000000;
 }
 
 .icon-btn svg {
@@ -221,4 +221,106 @@ body {
   font-size: 2rem;
   color: #FFA726;
   vertical-align: middle;
+}
+.footer {
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 18px 0;
+  background: transparent;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 99;
+}
+.copyright {
+  font-size: 1rem;
+  color: #FFA726;
+  margin-top: 8px;
+  font-family: 'Share Tech Mono', 'Digital-7', monospace;
+  letter-spacing: 1px;
+}
+
+.branding {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  font-family: 'Share Tech Mono', 'Digital-7', monospace;
+  color: #FFA726;
+  font-size: 1.5rem;
+  letter-spacing: 2px;
+}
+
+.logo {
+  font-size: 2.1rem;
+}
+
+.theme-toggle-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 6px;
+  color: #FFA726;
+  border-radius: 50%;
+  transition: background 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.theme-toggle-btn:hover, .theme-toggle-btn:focus {
+  background: #000000;
+}
+.theme-toggle-btn .material-icons {
+  font-size: 1.8rem;
+}
+
+body.light-theme {
+  background: #fff !important;
+  color: #000000 !important;
+}
+
+body.light-theme .display-container,
+body.light-theme .digit,
+body.light-theme .digit-ms,
+body.light-theme .ms-wrap,
+body.light-theme .brand-text,
+body.light-theme .logo,
+body.light-theme .laps-table,
+body.light-theme .btn,
+body.light-theme .material-icons,
+body.light-theme .branding,
+body.light-theme .laps-table th,
+body.light-theme .laps-table td {
+  color: #FF9800 !important;
+  text-shadow: none !important;
+}
+
+body.light-theme .btn {
+  box-shadow: 0 2px 8px #ff98004a;
+}
+
+body.light-theme .btn.reset {
+  background: #ffe082 !important;
+  color: #000000 !important;
+}
+
+body.light-theme .btn.start {
+  background: #81c784 !important;
+  color: #fff !important;
+}
+
+body.light-theme .btn.stop {
+  background: #e57373 !important;
+  color: #fff !important;
+}
+
+body.light-theme .btn.lap {
+  background: #FF9800 !important;
+  color: #000000 !important;
+}
+
+body.light-theme .footer {
+  background: #fff !important;
 }

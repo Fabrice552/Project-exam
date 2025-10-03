@@ -186,3 +186,6 @@ document.getElementById('shareBtn').onclick = function() {
   navigator.clipboard.writeText(window.location.href);
   alert('URL copied to clipboard!');
 };
+document.getElementById('themeToggleBtn').addEventListener('click', () => {
+  document.body.classList.toggle('light-theme');
+});
