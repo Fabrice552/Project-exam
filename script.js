@@ -157,7 +157,7 @@ resetLapBtn.addEventListener('click', () => {
 updateDisplay(0);
 renderLaps();
 // Font size controls
-let fontSizeVW = 12; // Default
+let fontSizeVW = 6; // Default
 const displayContainer = document.querySelector('.display-container');
 function updateFontSize() {
   displayContainer.style.fontSize = fontSizeVW + 'vw';
