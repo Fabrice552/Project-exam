@@ -199,14 +199,44 @@ body {
     min-width: unset;
     max-width: 98vw;
   }
+ 
 }
 .controls-top-right {
-  position: absolute;
+  position: fixed;
   top: 18px;
   right: 38px;
   display: flex;
   gap: 14px;
   z-index: 100;
+}
+.controls-top-left {
+  position: fixed;   
+  top: 24px;        
+  left: 32px;       
+  z-index: 200;
+  font-size:1.8rem      
+}
+
+.download-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 50%;
+  transition: background 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.download-btn .material-icons {
+  font-size: 2.7rem;    /* <--- Make icon much larger */
+  color: #FFA726;
+}
+
+.download-btn:hover,
+.download-btn:focus {
+  background: #000;
 }
 
 .icon-btn {
@@ -214,10 +244,10 @@ body {
   border: none;
   cursor: pointer;
   padding: 4px;
-  border-radius: 40%;
+  border-radius: 20%;
   transition: background 0.2s;
   display: flex;
-  align-items: center;
+  
   justify-content: center;
 }
 

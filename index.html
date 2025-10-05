@@ -5,11 +5,18 @@
   <meta name="viewport" content="width=device-width,initial-scale=1.0" />
   <title>Stopwatch App</title>
   <link rel="stylesheet" href="style.css" />
-  <!-- Google Fonts for Digital Style -->
   <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.7.0/jspdf.plugin.autotable.min.js"></script>
 </head>
 <body>
+ <div class="controls-top-left">
+  <button id="downloadLapsBtn" title="Download Laps" class="icon-btn download-btn">
+    <span class="material-icons">download_for_offline</span>
+  </button>
+</div>
+</div>
   <div class="controls-top-right">
   <button id="shareBtn" title="Share" class="icon-btn">
     <span class="material-icons">share</span>

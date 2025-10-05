@@ -1,10 +1,3 @@
-/*
-  Stopwatch App
-  - Start, Stop, Reset, Lap functionality
-  - Milliseconds display
-  - Laps table (lap split & total)
-  - vClock-like digital style
-*/
 
 const hoursEl = document.getElementById('hours');
 const minutesEl = document.getElementById('minutes');
@@ -189,6 +182,40 @@ document.getElementById('shareBtn').onclick = function() {
 };
 document.getElementById('themeToggleBtn').addEventListener('click', () => {
   document.body.classList.toggle('light-theme');
+});
+
+document.getElementById('downloadLapsBtn').addEventListener('click', function() {
+  // Get laps table
+  const lapsTable = document.querySelector('.laps-table');
+  if (!lapsTable) {
+    alert('No laps to download!');
+    return;
+  }
+
+  // Extract table headers and data
+  const headers = Array.from(lapsTable.querySelectorAll('th')).map(th => th.innerText.trim());
+  const rows = Array.from(lapsTable.querySelectorAll('tr')).slice(1).map(tr =>
+    Array.from(tr.querySelectorAll('td')).map(td => td.innerText.trim())
+  );
+
+  // Create PDF
+  const { jsPDF } = window.jspdf;
+  const doc = new jsPDF();
+
+  // Add title
+  doc.text("Stopwatch Laps", 14, 14);
+
+  // Add the table
+  doc.autoTable({
+    head: [headers],
+    body: rows,
+    startY: 20,
+    theme: 'grid',
+    styles: { fontSize: 12 }
+  });
+
+  // Save PDF
+  doc.save("laps.pdf");
 });
 
 function beep() {
