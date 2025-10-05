@@ -55,7 +55,7 @@ body {
   text-align: center;
   margin-bottom: 56px;
   color: #FFA726;
-  text-shadow: 0 0 18px #ff9800b0;
+  text-shadow: 0 0 18px #000000;
 }
 
 .digit, .digit-ms {
@@ -145,7 +145,7 @@ body {
   letter-spacing: 2px;
   min-width: 600px;
   text-align: center;
-  text-shadow: 0 0 10px #ff9800b0;
+  text-shadow: 0 0 10px #000000;
 }
 
 .laps-table th,
@@ -165,7 +165,7 @@ body {
 }
 
 .laps-table td {
-  text-shadow: 0 0 10px #ff9800b0;
+  text-shadow: 0 0 10px #000000;
   font-size: 1em;
 }
 
@@ -249,6 +249,7 @@ body {
   margin-top: 8px;
   font-family: 'Share Tech Mono', 'Digital-7', monospace;
   letter-spacing: 1px;
+  text-shadow: 0 0 10px #000000;
 }
 
 .branding {
