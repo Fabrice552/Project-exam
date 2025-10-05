@@ -157,20 +157,21 @@ resetLapBtn.addEventListener('click', () => {
 updateDisplay(0);
 renderLaps();
 // Font size controls
-let fontSizeVW = 6; // Default
-const displayContainer = document.querySelector('.display-container');
-function updateFontSize() {
-  displayContainer.style.fontSize = fontSizeVW + 'vw';
+let zoomScale = 0.7; // Start at normal size
+const mainContainer = document.querySelector('.container');
+function updateZoom() {
+  mainContainer.style.transform = `scale(${zoomScale})`;
+  mainContainer.style.transformOrigin = 'top center';
 }
 document.getElementById('increaseFontBtn').onclick = function() {
-  fontSizeVW = Math.min(fontSizeVW + 1, 18);
-  updateFontSize();
+  zoomScale = Math.min(zoomScale + 0.1, 2);
+  updateZoom();
 };
 document.getElementById('decreaseFontBtn').onclick = function() {
-  fontSizeVW = Math.max(fontSizeVW - 1, 6);
-  updateFontSize();
+  zoomScale = Math.max(zoomScale - 0.1, 0.5);
+  updateZoom();
 };
-updateFontSize();
+updateZoom();
 
 // Fullscreen control
 document.getElementById('fullscreenBtn').onclick = function() {

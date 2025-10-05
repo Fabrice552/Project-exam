@@ -15,6 +15,7 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  overflow: auto;
 }
 
 .container {
@@ -25,6 +26,7 @@ body {
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  transition: transform 0.2s;
 }
 .center-block {
   display: flex;
@@ -333,3 +335,12 @@ body.light-theme .btn.lap {
 body.light-theme .footer {
   background: #fff !important;
 }
+body.light-theme .copyright,
+body.light-theme .branding {
+  color: #000000 !important;
+}
+
+body.light-theme .btn.reset { background: #ffe082 !important; }
+body.light-theme .btn.start { background: #81c784 !important; }
+body.light-theme .btn.stop { background: #e57373 !important; }
+body.light-theme .btn.lap  { background: #FF9800 !important; }
