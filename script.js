@@ -150,21 +150,28 @@ resetLapBtn.addEventListener('click', () => {
 updateDisplay(0);
 renderLaps();
 // Font size controls
-let zoomScale = 0.7; // Start at normal size
-const mainContainer = document.querySelector('.container');
-function updateZoom() {
-  mainContainer.style.transform = `scale(${zoomScale})`;
-  mainContainer.style.transformOrigin = 'top center';
+// Suppose you use a variable to track zoom level
+let zoomLevel = 0.5; // 1 means 100%
+
+function applyZoom() {
+  // Update main container
+  document.querySelector('.container').style.transform = `scale(${zoomLevel})`;
+
+  // Also update the footer font size
+  document.querySelector('.footer').style.fontSize = `${1.1 * zoomLevel}rem`;
 }
-document.getElementById('increaseFontBtn').onclick = function() {
-  zoomScale = Math.min(zoomScale + 0.1, 2);
-  updateZoom();
-};
-document.getElementById('decreaseFontBtn').onclick = function() {
-  zoomScale = Math.max(zoomScale - 0.1, 0.5);
-  updateZoom();
-};
-updateZoom();
+
+// Increase font
+document.getElementById('increaseFontBtn').addEventListener('click', () => {
+  zoomLevel = Math.min(zoomLevel + 0.1, 2); // Prevent too large
+  applyZoom();
+});
+
+// Decrease font
+document.getElementById('decreaseFontBtn').addEventListener('click', () => {
+  zoomLevel = Math.max(zoomLevel - 0.1, 0.5); // Prevent too small
+  applyZoom();
+});
 
 // Fullscreen control
 document.getElementById('fullscreenBtn').onclick = function() {

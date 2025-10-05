@@ -21,12 +21,13 @@ body {
 .container {
   width: 100vw;
   flex: 1 0 auto;
-  min-height: 100vh;
+  min-height: 50vh;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   transition: transform 0.2s;
+  padding-top: 200px;
 }
 .center-block {
   display: flex;
@@ -56,14 +57,14 @@ body {
   letter-spacing: 10px;
   text-align: center;
   margin-bottom: 56px;
-  color: #FFA726;
+  color: #C0C0C0;
   text-shadow: 0 0 18px #000000;
 }
 
 .digit, .digit-ms {
   font-variant-numeric: tabular-nums;
   font-family: 'Digital-7', monospace;
-  font-weight: normal;
+  font-weight: 550;
   display: inline-block;
   min-width: 4ch;
   text-align: left;
@@ -141,7 +142,7 @@ body {
   border-collapse: collapse;
   margin: 0 auto;
   font-family: 'Digital-7', monospace;
-  color: #FFA726;
+  color: #C0C0C0;
   font-size: 2.2rem;
   font-weight: normal;
   letter-spacing: 2px;
@@ -170,37 +171,6 @@ body {
   text-shadow: 0 0 10px #000000;
   font-size: 1em;
 }
-
-@media (max-width: 900px) {
-  .display-container {
-    font-size: 3rem;
-    min-width: 200px;
-  }
-  .laps-table {
-    font-size: 1.15rem;
-    min-width: 240px;
-  }
-  .btn {
-    padding: 8px 16px;
-    font-size: 1.1rem;
-  }
-}
-
-@media (max-width: 600px) {
-  .display-container {
-    font-size: 2rem;
-    min-width: 140px;
-  }
-  .container {
-    padding: 6px;
-  }
-  .laps-container, .laps-table {
-    font-size: 0.95rem;
-    min-width: unset;
-    max-width: 98vw;
-  }
- 
-}
 .controls-top-right {
   position: fixed;
   top: 18px;
@@ -210,99 +180,18 @@ body {
   z-index: 100;
 }
 .controls-top-left {
-  position: fixed;   
+  position: fixed;
+   flex-direction: column;    
   top: 24px;        
-  left: 32px;       
+  left: 38px;       
   z-index: 200;
   font-size:1.8rem      
 }
-
-.download-btn {
+.theme-toggle-btn  {
   background: none;
   border: none;
   cursor: pointer;
-  padding: 8px;
-  border-radius: 50%;
-  transition: background 0.2s;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.download-btn .material-icons {
-  font-size: 2.7rem;    /* <--- Make icon much larger */
-  color: #FFA726;
-}
-
-.download-btn:hover,
-.download-btn:focus {
-  background: #000;
-}
-
-.icon-btn {
-  background: none;
-  border: none;
-  cursor: pointer;
-  padding: 4px;
-  border-radius: 20%;
-  transition: background 0.2s;
-  display: flex;
-  
-  justify-content: center;
-}
-
-.icon-btn:hover, .icon-btn:focus {
-  background: #000000;
-}
-
-.icon-btn svg {
-  display: block;
-  stroke: #FFA726;
-  fill: none;
-}
-.icon-btn .material-icons {
-  font-size: 1.3rem;
-  color: #FFA726;
-  vertical-align: middle;
-}
-.footer {
-  width: 100vw;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 18px 0;
-  background: transparent;
-  
-}
-.copyright {
-  font-size: 1rem;
-  color: #FFA726;
-  margin-top: 8px;
-  font-family: 'Share Tech Mono', 'Digital-7', monospace;
-  letter-spacing: 1px;
-  text-shadow: 0 0 10px #000000;
-}
-
-.branding {
-  display: flex;
-  align-items: center;
-  gap: 14px;
-  font-family: 'Share Tech Mono', 'Digital-7', monospace;
-  color: #FFA726;
-  font-size: 1.5rem;
-  letter-spacing: 2px;
-}
-
-.logo {
-  font-size: 2.1rem;
-}
-
-.theme-toggle-btn {
-  background: none;
-  border: none;
-  cursor: pointer;
-  padding: 6px;
+  padding: 1px;
   color: #FFA726;
   border-radius: 50%;
   transition: background 0.2s;
@@ -311,7 +200,7 @@ body {
   justify-content: center;
 }
 .theme-toggle-btn:hover, .theme-toggle-btn:focus {
-  background: #000000;
+  background: #C0C0C0;
 }
 .theme-toggle-btn .material-icons {
   font-size: 1.8rem;
@@ -374,3 +263,123 @@ body.light-theme .btn.reset { background: #ffe082 !important; }
 body.light-theme .btn.start { background: #81c784 !important; }
 body.light-theme .btn.stop { background: #e57373 !important; }
 body.light-theme .btn.lap  { background: #FF9800 !important; }
+
+.download-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 6px;
+  color: #FFA726;
+  border-radius: 50%;
+  transition: background 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.8rem;   /* Adjust size as needed */
+}
+
+.download-btn .material-icons   {
+
+  font-size: 2.7rem;   /* Make both icons same size for alignment */
+  color: #FFA726;
+}
+
+.download-btn:hover,
+.download-btn:focus {
+  background: #000;
+}
+
+.icon-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+  border-radius: 20%;
+  transition: background 0.2s;
+  display: flex;
+  
+  justify-content: center;
+}
+
+.icon-btn:hover, .icon-btn:focus {
+  background: #C0C0C0;
+}
+
+.icon-btn svg {
+  display: block;
+  stroke: #FFA726;
+  fill: none;
+}
+.icon-btn .material-icons {
+  font-size: 1.3rem;
+  color: #FFA726;
+  vertical-align: middle;
+}
+.footer {
+  width: 100vw;
+  bottom: 0%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 18px 0;
+  background: transparent;
+  
+}
+.copyright {
+  font-size: 1rem;
+  color: #FFA726;
+  margin-top: 8px;
+  font-family: 'Share Tech Mono', 'Digital-7', monospace;
+  letter-spacing: 1px;
+  text-shadow: 0 0 10px #000000;
+}
+
+.branding {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  font-family: 'Share Tech Mono', 'Digital-7', monospace;
+  color: #FFA726;
+  font-size: 1.5rem;
+  letter-spacing: 2px;
+}
+
+.logo {
+  font-size: 2.1rem;
+}
+
+@media (max-width: 900px) {
+  .controls-top-left,
+  .controls-top-right {
+    gap: 10px;
+  }
+  .download-btn .material-icons,
+  .theme-toggle-btn .material-icons {
+    font-size: 2rem;
+  }
+  .branding { font-size: 1.1rem; }
+  .logo { font-size: 1.7rem; }
+  .copyright { font-size: 0.9rem; }
+  .stopwatch { padding: 20px 10px; }
+  .center-block { margin-top: 30px; margin-bottom: 24px; }
+}
+
+@media (max-width: 600px) {
+  .controls-top-left,
+  .controls-top-right {
+    top: 8px;
+    left: 8px;
+    right: 8px;
+    gap: 6px;
+  }
+  .download-btn .material-icons,
+  .theme-toggle-btn .material-icons {
+    font-size: 1.5rem;
+  }
+  .branding { font-size: 0.95rem; }
+  .logo { font-size: 1.2rem; }
+  .copyright { font-size: 0.7rem; }
+  .stopwatch { padding: 8px 2px; }
+  .center-block { margin-top: 12px; margin-bottom: 10px; }
+}
