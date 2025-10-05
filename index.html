@@ -5,38 +5,43 @@
   <meta name="viewport" content="width=device-width,initial-scale=1.0" />
   <title>Stopwatch App</title>
   <link rel="stylesheet" href="style.css" />
+  <!-- Google Fonts for mono/digital style -->
   <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <!-- jsPDF and autoTable libraries for PDF export of laps -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.7.0/jspdf.plugin.autotable.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.7.0/jspdf.plugin.autotable.min.js"></script>
 </head>
 <body>
- <div class="controls-top-left">
-  <button id="downloadLapsBtn" title="Download Laps" class="icon-btn download-btn">
-    <span class="material-icons">download_for_offline</span>
-  </button>
-  <button id="themeToggleBtn" class="theme-toggle-btn" title="Toggle theme">
+  <!-- Top-left controls: Download laps as PDF, theme toggle -->
+  <div class="controls-top-left">
+    <button id="downloadLapsBtn" title="Download Laps" class="icon-btn download-btn">
+      <span class="material-icons">download_for_offline</span>
+    </button>
+    <button id="themeToggleBtn" class="theme-toggle-btn" title="Toggle theme">
       <span class="material-icons">invert_colors</span>
     </button>
-</div>
-</div>
+  </div>
+  <!-- Top-right controls: Share, font size, fullscreen -->
   <div class="controls-top-right">
-  <button id="shareBtn" title="Share" class="icon-btn">
-    <span class="material-icons">share</span>
-  </button>
-  <button id="decreaseFontBtn" title="Decrease Font Size" class="icon-btn">
-    <span class="material-icons">remove</span>
-  </button>
-  <button id="increaseFontBtn" title="Increase Font Size" class="icon-btn">
-    <span class="material-icons">add</span>
-  </button>
-  <button id="fullscreenBtn" title="Full Screen" class="icon-btn">
-    <span class="material-icons">fullscreen</span>
-  </button>
-</div>
+    <button id="shareBtn" title="Share" class="icon-btn">
+      <span class="material-icons">share</span>
+    </button>
+    <button id="decreaseFontBtn" title="Decrease Font Size" class="icon-btn">
+      <span class="material-icons">remove</span>
+    </button>
+    <button id="increaseFontBtn" title="Increase Font Size" class="icon-btn">
+      <span class="material-icons">add</span>
+    </button>
+    <button id="fullscreenBtn" title="Full Screen" class="icon-btn">
+      <span class="material-icons">fullscreen</span>
+    </button>
+  </div>
   <main class="container">
+    <!-- Main stopwatch UI -->
     <div class="stopwatch">
       <div class="display-container">
+        <!-- Time digits displayed here -->
         <span id="hours" class="digit">00</span>:
         <span id="minutes" class="digit">00</span>:
         <span id="seconds" class="digit">00</span>
@@ -44,27 +49,28 @@
           .<span id="milliseconds" class="digit-ms">00</span>
         </span>
       </div>
+      <!-- Buttons for reset/start/stop -->
       <div class="buttons">
         <button id="resetLapBtn" class="btn reset">Reset</button>
         <button id="startStopBtn" class="btn start">Start</button>
       </div>
+      <!-- Laps list/table will be inserted here -->
       <div id="lapsContainer" class="laps-container">
         <!-- Laps will appear here -->
       </div>
     </div>
-  
   </main>
-  
+  <!-- Footer branding and copyright -->
   <footer class="footer">
-  <div class="branding">
-    <span class="logo">⏰</span>
-    <span class="brand-text">Stopwatch App</span>
-   
-  </div>
-  <div class="copyright">
-    &copy; 2025 Fabrice553. All rights reserved.
-  </div>
-</footer>
-<script src="script.js"></script>
+    <div class="branding">
+      <span class="logo">⏰</span>
+      <span class="brand-text">Stopwatch App</span>
+    </div>
+    <div class="copyright">
+      &copy; 2025 Fabrice553. All rights reserved.
+    </div>
+  </footer>
+  <!-- Main JS logic for stopwatch -->
+  <script src="script.js"></script>
 </body>
 </html>
