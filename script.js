@@ -151,7 +151,7 @@ updateDisplay(0);
 renderLaps();
 // Font size controls
 // Suppose you use a variable to track zoom level
-let zoomLevel = 0.5; // 1 means 100%
+let zoomLevel = 0.1; // 1 means 100%
 
 function applyZoom() {
   // Update main container
