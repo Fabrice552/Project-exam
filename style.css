@@ -7,7 +7,7 @@
 
 /* Main body layout and fonts */
 body { 
-  background: #f00404;
+  background: #000000;
   color: #FFA726;
   min-height: 100vh;
   margin: 0;
@@ -264,7 +264,7 @@ body {
 
 /* Light theme overrides */
 body.light-theme {
-  background: #fff !important;
+  background: #2C2C2C !important;
   color: #000000 !important;
 }
 
