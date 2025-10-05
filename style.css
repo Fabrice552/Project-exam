@@ -26,6 +26,13 @@ body {
   align-items: center;
   flex-direction: column;
 }
+.center-block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 80px;       /* controls vertical position */
+  margin-bottom: 48px;    /* space before laps */
+}
 
 .stopwatch {
   background: transparent;
@@ -74,11 +81,11 @@ body {
 }
 
 .btn {
-  padding: 16px 44px;
+  padding: 10px 24px;
   font-family: inherit;
-  font-size: 1.35rem;
+  font-size: 1rem;
   border: none;
-  border-radius: 4px;
+  border-radius: 3px;
   cursor: pointer;
   transition: background 0.2s, color 0.2s, box-shadow 0.2s;
   box-shadow: 0 2px 8px #000000;
@@ -172,8 +179,8 @@ body {
     min-width: 240px;
   }
   .btn {
-    padding: 10px 18px;
-    font-size: 1rem;
+    padding: 8px 16px;
+    font-size: 1.1rem;
   }
 }
 
@@ -204,8 +211,8 @@ body {
   background: none;
   border: none;
   cursor: pointer;
-  padding: 6px;
-  border-radius: 50%;
+  padding: 4px;
+  border-radius: 40%;
   transition: background 0.2s;
   display: flex;
   align-items: center;
@@ -222,7 +229,7 @@ body {
   fill: none;
 }
 .icon-btn .material-icons {
-  font-size: 2rem;
+  font-size: 1.3rem;
   color: #FFA726;
   vertical-align: middle;
 }
@@ -294,7 +301,7 @@ body.light-theme .material-icons,
 body.light-theme .branding,
 body.light-theme .laps-table th,
 body.light-theme .laps-table td {
-  color: #FF9800 !important;
+  color: #000000 !important;
   text-shadow: none !important;
 }
 
