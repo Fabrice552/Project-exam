@@ -309,7 +309,7 @@ body.light-theme .btn.lap {
 }
 
 body.light-theme .footer {
-  background: #fff !important;
+  background: #2C2C2C !important;
 }
 body.light-theme .copyright,
 body.light-theme .branding {
@@ -389,11 +389,12 @@ body.light-theme .btn.lap  { background: #FF9800 !important; }
 /* Copyright text styling */
 .copyright {
   font-size: 1rem;
+  display: flex;
   color: #FFA726;
   margin-top: 8px;
   font-family: 'Share Tech Mono', 'Digital-7', monospace;
   letter-spacing: 1px;
-  text-shadow: 0 0 10px #000000;
+  font-weight: 550;
 }
 
 /* Branding section styling */
